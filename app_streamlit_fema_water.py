@@ -181,10 +181,11 @@ if run:
     st.table(toplist[["state","applicantName","projectCount","totalFederalShareObligated","firstDateObligated","lastDateObligated"]])
 
 st.markdown("""---
-**Why you may see zero results**  
-- Exact match on `incidentType eq 'Fire'` can miss entries labeled **'Wildfire'**. The default here uses **contains** on incidentType.  
-- Many wildfire water costs post-disaster appear in **Category B** (Emergency Protective Measures) or **E** (Buildings/Equipment), not just **F** (Utilities).  
-- Narrow date/state windows can legitimately return nothing if there were no obligations in that slice.
+***Instructions***
+- This app helps identify water utilities with Public Assistance (PA) projects funded in response to fires and wildfires.
+- Use the filters to narrow results by date and keywords (include or exclude).
+- The “Match incident type by contains (Fire/Wildfire)” option broadens the search to capture incidents labeled either Fire or Wildfire. These categories may overlap.
+- The Damage Category filter is not currently functional.
 
 **Docs**  
 - OpenFEMA API filter syntax (including `substringof`, `in`, `eq`): https://www.fema.gov/about/openfema/api  
