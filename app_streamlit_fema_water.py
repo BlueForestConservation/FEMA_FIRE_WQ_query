@@ -183,7 +183,7 @@ if run:
 st.markdown("""---
 ***Instructions***
 - This app helps identify water utilities with Public Assistance (PA) projects funded in response to fires and wildfires.
-- Use the filters to narrow results by date and keywords (include or exclude).
+- Use the filters to narrow results by state, date, and keywords (include or exclude).
 - The “Match incident type by contains (Fire/Wildfire)” option broadens the search to capture incidents labeled either Fire or Wildfire. These categories may overlap.
 - The Damage Category filter is not currently functional.
 
