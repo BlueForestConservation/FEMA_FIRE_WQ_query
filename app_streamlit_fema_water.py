@@ -32,9 +32,12 @@ def build_filter(states: Optional[List[str]], start: Optional[str], end: Optiona
         parts.append("(substringof('Fire',incidentType) or substringof('Wildfire',incidentType))")
     else:
         parts.append("incidentType eq 'Fire'")
+    
     if categories:
-        cats = ",".join([f"'{c.strip().upper()}'" for c in categories if c.strip()])
-        parts.append(f"damageCategoryCode in ({cats})")
+        cat_or = " or ".join([f"damageCategoryCode eq '{c.strip().upper()}'" for c in categories if c.strip()])
+        if cat_or:
+            parts.append("(" + cat_or + ")")
+
     if states:
         state_filters = [f"stateAbbreviation eq '{s.strip().upper()}'" for s in states if s.strip()]
         if state_filters:
