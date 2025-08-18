@@ -19,8 +19,6 @@ DEFAULT_INCLUDE = [
 ]
 
 DEFAULT_EXCLUDE = [
-    "electric", "power", "gas", "communications", "telephone", "telecom", "cable", "fiber", "internet",
-    "cooperative electric", "power authority", "public utility district no.", "pud"
 ]
 
 ALL_CATEGORIES = ["A","B","C","D","E","F","G"]
@@ -130,7 +128,7 @@ with st.sidebar:
         start_date = st.date_input("Start date (≥)", value=None)
     with col2:
         end_date = st.date_input("End date (≤)", value=None)
-    cats = st.multiselect("Damage categories", options=ALL_CATEGORIES, default=["F","B","D","E"])
+    cats = st.multiselect("Damage categories", options=ALL_CATEGORIES, default=[])
     incident_contains = st.toggle("Match incidentType by contains('Fire'/'Wildfire')", value=True)
     include = st.text_area("Include keywords (comma-separated)", value=",".join(DEFAULT_INCLUDE))
     exclude = st.text_area("Exclude keywords (comma-separated)", value=",".join(DEFAULT_EXCLUDE))
